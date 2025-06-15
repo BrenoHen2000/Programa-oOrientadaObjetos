@@ -1,30 +1,30 @@
+#Crie a classe Carro com os atributos modelo, ano, velocidade. 
+# Adicione os métodos: acelerar(): aumenta velocidade em 10. 
+# frear(): diminui velocidade em 10, mas nunca abaixo de 0. 
+# exibir_velocidade()
+
 class Carro:
-    def __init__(self):
-        self.ligado = False
-        self.cor = ''
-        self.modelo =  ''
-        self.velocidade = 0
+    def __init__(self, modelo, ano, velocidade):
+        self.modelo = modelo
+        self.ano = ano
+        self.velocidade = velocidade
 
-    
-    def liga(self):
-        self.ligado = True
-
-    def desliga(self):
-        self.ligado = False
-
-    def acelera(self):
+    def acelerar (self):
         self.velocidade += 10
-        
 
-    def desacelera (self):
+    def frear(self):
+        if self.velocidade != 0:
             self.velocidade -= 10
+        else:
+            print("carro esta parado")
 
-Carro1 = Carro ()
+    def exibir_velocidade(self):
+        if self.velocidade != 0:
+            print(f"a velocidade é {self.velocidade}")
+        else:
+            print("carro esta parado")
 
-Carro1.liga()
-Carro1.acelera()
-Carro1.acelera()
-
-print (Carro1.ligado)
-print (Carro1.velocidade)
-
+carro1 = Carro("fiesta", "2018", 0)
+carro1.acelerar()
+carro1.frear()
+carro1.exibir_velocidade()
